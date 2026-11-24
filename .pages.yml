@@ -1,0 +1,129 @@
+# Pages CMS sozlamasi — https://app.pagescms.org orqali saytni forma ko'rinishida tahrirlash uchun
+media:
+  input: assets/uploads
+  output: /assets/uploads
+
+content:
+  - name: profile
+    label: "Mening ma'lumotlarim (CV)"
+    type: file
+    path: _data/profile.yml
+    format: yaml
+    fields:
+      - { name: name, label: "To'liq ism", type: string }
+      - { name: name_variants, label: "Ismning boshqa yozilishlari (AI uchun)", type: string, list: true }
+      - { name: given_name, label: "Ism", type: string }
+      - { name: family_name, label: "Familiya", type: string }
+      - { name: honorific_suffix, label: "Ilmiy darajalar (masalan: Ph.D., D.Sc.)", type: string }
+      - { name: job_title, label: "Lavozim", type: string }
+      - { name: tagline, label: "Qisqa tavsif (sarlavha ostida)", type: text }
+      - { name: affiliation, label: "Ish joyi", type: string }
+      - { name: affiliation_url, label: "Ish joyi sayti", type: string }
+      - { name: location, label: "Shahar, davlat", type: string }
+      - { name: nationality, label: "Fuqarolik", type: string }
+      - { name: email, label: "Email", type: string }
+      - { name: photo, label: "Rasm", type: image }
+      - { name: cv_file, label: "CV fayli (PDF)", type: file }
+      - name: links
+        label: "Ilmiy profillar havolalari"
+        type: object
+        fields:
+          - { name: orcid, label: "ORCID", type: string }
+          - { name: google_scholar, label: "Google Scholar", type: string }
+          - { name: scopus, label: "Scopus", type: string }
+          - { name: researchgate, label: "ResearchGate", type: string }
+          - { name: mathscinet, label: "MathSciNet", type: string }
+          - { name: zbmath, label: "zbMATH", type: string }
+          - { name: linkedin, label: "LinkedIn", type: string }
+          - { name: github, label: "GitHub", type: string }
+      - name: metrics
+        label: "Raqamlar (bosh sahifa kartasi)"
+        type: object
+        list: true
+        fields:
+          - { name: value, label: "Qiymat", type: string }
+          - { name: label, label: "Izoh", type: string }
+      - { name: summary, label: "About — men haqimda", type: text }
+      - { name: research_statement, label: "Ilmiy yo'nalish tavsifi", type: text }
+      - { name: interests, label: "Ilmiy qiziqishlar", type: string, list: true }
+      - name: experience
+        label: "Ish tajribasi"
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{role} — {organization}" } }
+        fields:
+          - { name: role, label: "Lavozim", type: string }
+          - { name: organization, label: "Tashkilot", type: string }
+          - { name: location, label: "Joy", type: string }
+          - { name: start, label: "Boshlangan (masalan: Oct 2023)", type: string }
+          - { name: end, label: "Tugagan (yoki Present)", type: string }
+          - { name: details, label: "Vazifalar", type: string, list: true }
+      - name: education
+        label: "Ta'lim"
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{degree}" } }
+        fields:
+          - { name: degree, label: "Daraja", type: string }
+          - { name: institution, label: "Muassasa", type: string }
+          - { name: location, label: "Joy", type: string }
+          - { name: dates, label: "Sanalar", type: string }
+          - { name: thesis, label: "Dissertatsiya mavzusi", type: text }
+          - { name: supervisors, label: "Ilmiy rahbar(lar)", type: string }
+      - name: awards
+        label: "Mukofotlar va grantlar"
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{title}" } }
+        fields:
+          - { name: title, label: "Nomi", type: string }
+          - { name: organization, label: "Kim tomonidan", type: string }
+          - { name: year, label: "Yil", type: string }
+          - { name: description, label: "Tavsif", type: text }
+      - name: publications
+        label: "Maqolalar (yangisini RO'YXAT BOSHIGA qo'shing)"
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{year} — {title}" } }
+        fields:
+          - { name: authors, label: "Mualliflar", type: string }
+          - { name: title, label: "Sarlavha", type: string }
+          - { name: venue, label: "Jurnal / kitob", type: string }
+          - { name: year, label: "Yil", type: string }
+          - { name: details, label: "Tom(son), sahifalar", type: string }
+          - name: type
+            label: "Turi"
+            type: select
+            options: { values: [journal, chapter, in-press] }
+          - { name: doi, label: "DOI (masalan 10.1002/mma.8491)", type: string }
+      - name: talks
+        label: "Konferensiyalar"
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{date} — {title}" } }
+        fields:
+          - { name: title, label: "Mavzu", type: string }
+          - { name: authors, label: "Mualliflar", type: string }
+          - { name: event, label: "Konferensiya", type: string }
+          - { name: location, label: "Joy", type: string }
+          - { name: date, label: "Sana", type: string }
+      - { name: courses, label: "O'qitilgan fanlar", type: string, list: true }
+      - name: service
+        label: "Tahririy / professional faoliyat"
+        type: object
+        list: true
+        fields:
+          - { name: role, label: "Vazifa", type: string }
+          - { name: organization, label: "Tashkilot", type: string }
+          - { name: dates, label: "Yillar", type: string }
+      - name: skills
+        label: "Ko'nikmalar"
+        type: object
+        list: true
+        fields:
+          - { name: category, label: "Toifa", type: string }
+          - { name: items, label: "Ro'yxat", type: string }
+      - name: languages
+        label: "Tillar"
+        type: object
+        list: true
+        fields:
+          - { name: name, label: "Til", type: string }
+          - { name: level, label: "Daraja", type: string }
+      - { name: references_note, label: "Tavsiyanomalar haqida izoh", type: string }
+
