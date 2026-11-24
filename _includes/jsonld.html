@@ -1,0 +1,83 @@
+{%- assign p = site.data.profile -%}
+{%- assign home = "/" | absolute_url -%}
+{%- assign same = "" | split: "" -%}
+{%- for l in p.links -%}{%- if l[1] and l[1] != "" -%}{%- assign same = same | push: l[1] -%}{%- endif -%}{%- endfor -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "{{ home }}#profile",
+      "url": "{{ home }}",
+      "name": {{ p.name | append: " — " | append: p.job_title | jsonify }},
+      "dateModified": "{{ site.time | date: '%Y-%m-%d' }}",
+      "inLanguage": "en",
+      "mainEntity": { "@id": "{{ home }}#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ home }}#person",
+      "name": {{ p.name | jsonify }},
+      "givenName": {{ p.given_name | jsonify }},
+      "familyName": {{ p.family_name | jsonify }},
+      "alternateName": {{ p.name_variants | jsonify }},
+      "honorificSuffix": {{ p.honorific_suffix | jsonify }},
+      "jobTitle": {{ p.job_title | jsonify }},
+      "description": {{ p.tagline | jsonify }},
+      "url": "{{ home }}",
+      "email": {{ "mailto:" | append: p.email | jsonify }},
+      {%- if p.photo and p.photo != "" %}
+      "image": {{ p.photo | absolute_url | jsonify }},
+      {%- endif %}
+      "nationality": { "@type": "Country", "name": {{ p.nationality | jsonify }} },
+      "homeLocation": { "@type": "Place", "name": {{ p.location | jsonify }} },
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": {{ p.affiliation | jsonify }}{% if p.affiliation_url and p.affiliation_url != "" %},
+        "url": {{ p.affiliation_url | jsonify }}{% endif %}
+      },
+      "alumniOf": [
+        {%- for e in p.education %}
+        { "@type": "CollegeOrUniversity", "name": {{ e.institution | jsonify }} }{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
+      ],
+      "hasCredential": [
+        {%- for e in p.education %}
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "degree",
+          "name": {{ e.degree | jsonify }},
+          "recognizedBy": { "@type": "CollegeOrUniversity", "name": {{ e.institution | jsonify }} }
+        }{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
+      ],
+      "award": [
+        {%- for a in p.awards %}
+        {{ a.title | append: " (" | append: a.organization | append: ", " | append: a.year | append: ")" | jsonify }}{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
+      ],
+      "knowsAbout": {{ p.interests | jsonify }},
+      "knowsLanguage": [
+        {%- for lang in p.languages %}
+        {{ lang.name | jsonify }}{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
+      ]{% if same.size > 0 %},
+      "sameAs": {{ same | jsonify }}{% endif %}
+    },
+    {%- for pub in p.publications %}
+    {
+      "@type": {% if pub.type == "chapter" %}"Chapter"{% else %}"ScholarlyArticle"{% endif %},
+      "headline": {{ pub.title | jsonify }},
+      "name": {{ pub.title | jsonify }},
+      "author": {{ pub.authors | jsonify }},
+      "creator": { "@id": "{{ home }}#person" },
+      "datePublished": {{ pub.year | jsonify }},
+      "isPartOf": {{ pub.venue | jsonify }}{% if pub.doi and pub.doi != "" %},
+      "identifier": { "@type": "PropertyValue", "propertyID": "DOI", "value": {{ pub.doi | jsonify }} },
+      "url": {{ "https://doi.org/" | append: pub.doi | jsonify }}{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}
+</script>

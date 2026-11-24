@@ -1,0 +1,20 @@
+# ------------------------------------------------------------
+#  Sayt sozlamalari. Odatda faqat "url" ni bir marta o'zgartirasiz.
+#  Barcha CV ma'lumotlari: _data/profile.yml
+# ------------------------------------------------------------
+title: Bakhodirjon Toshtemirov
+description: "Bakhodirjon Toshtemirov, Ph.D., D.Sc. — Assistant Professor of Mathematics at Alasala Colleges (Dammam, Saudi Arabia). Research on fractional-order PDEs, singular operators, inverse problems and Physics-Informed Neural Networks."
+
+# GitHub foydalanuvchi nomingizni yozing, masalan: https://toshtemirov.github.io
+url: "https://USERNAME.github.io"
+baseurl: ""
+
+lang: en
+timezone: Asia/Riyadh
+
+exclude:
+  - README.md
+  - QOLLANMA.md
+  - .pages.yml
+  - preview
+  - build_preview.py

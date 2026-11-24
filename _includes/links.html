@@ -1,0 +1,11 @@
+{%- assign L = site.data.profile.links -%}
+<ul class="profile-links">
+  {%- if L.orcid and L.orcid != "" %}<li><a href="{{ L.orcid }}" rel="me noopener">ORCID</a></li>{% endif %}
+  {%- if L.google_scholar and L.google_scholar != "" %}<li><a href="{{ L.google_scholar }}" rel="me noopener">Google Scholar</a></li>{% endif %}
+  {%- if L.scopus and L.scopus != "" %}<li><a href="{{ L.scopus }}" rel="me noopener">Scopus</a></li>{% endif %}
+  {%- if L.researchgate and L.researchgate != "" %}<li><a href="{{ L.researchgate }}" rel="me noopener">ResearchGate</a></li>{% endif %}
+  {%- if L.mathscinet and L.mathscinet != "" %}<li><a href="{{ L.mathscinet }}" rel="me noopener">MathSciNet</a></li>{% endif %}
+  {%- if L.zbmath and L.zbmath != "" %}<li><a href="{{ L.zbmath }}" rel="me noopener">zbMATH</a></li>{% endif %}
+  {%- if L.linkedin and L.linkedin != "" %}<li><a href="{{ L.linkedin }}" rel="me noopener">LinkedIn</a></li>{% endif %}
+  {%- if L.github and L.github != "" %}<li><a href="{{ L.github }}" rel="me noopener">GitHub</a></li>{% endif %}
+</ul>

@@ -1,0 +1,309 @@
+# ============================================================
+#  BU FAYL — SAYTINGIZNING BARCHA MA'LUMOTLARI.
+#  Pages CMS (app.pagescms.org) orqali forma ko'rinishida tahrirlang,
+#  yoki shu yerda to'g'ridan-to'g'ri o'zgartiring.
+#  Bo'sh qoldirilgan maydonlar saytda ko'rinmaydi.
+# ============================================================
+
+name: Bakhodirjon Toshtemirov
+# Ismingiz boshqa yozilish shakllari — AI va qidiruv tizimlari sizni topishi uchun
+name_variants:
+  - Toshtemirov Bakhodirjon
+  - Bakhodir Toshtemirov
+  - Baxodirjon Toshtemirov
+  - B. Toshtemirov
+  - Баходиржон Тоштемиров
+given_name: Bakhodirjon
+family_name: Toshtemirov
+honorific_suffix: "Ph.D., D.Sc."
+job_title: Assistant Professor of Mathematics
+tagline: Research mathematician working on fractional-order PDEs, singular operators and inverse problems — and bringing them together with scientific computing and Physics-Informed Neural Networks.
+affiliation: Alasala Colleges
+affiliation_url: https://www.alasala.edu.sa
+location: Dammam, Saudi Arabia
+nationality: Uzbekistan
+email: toshtemirovbh@gmail.com
+photo: ""            # masalan: /assets/uploads/photo.jpg
+cv_file: /assets/files/Toshtemirov_CV_2026.pdf
+
+# Ilmiy profillar — havolalarni qo'shing (AI sizni aniq tanishi uchun juda muhim!)
+links:
+  orcid: "https://orcid.org/0000-0001-9510-5662"
+  google_scholar: "https://scholar.google.com/citations?user=XfaReL0AAAAJ"
+  scopus: "https://www.scopus.com/authid/detail.uri?authorId=57222812650"
+  researchgate: "https://www.researchgate.net/profile/Bakhodirjon-Toshtemirov"
+  mathscinet: ""
+  zbmath: ""
+  linkedin: "https://www.linkedin.com/in/bakhodirjon-toshtemirov-b98b7b246"
+  github: ""
+
+metrics:
+  - value: "7+"
+    label: Years of international teaching
+  - value: "13"
+    label: Publications
+  - value: "4"
+    label: Scopus h-index
+  - value: "320+"
+    label: Students taught online (IT-Park University)
+
+summary: |
+  Research mathematician and educator with 7+ years of international teaching experience, both in person and online, across Saudi Arabia and Uzbekistan. My research focuses on fractional-order partial differential equations, degenerate and singular operators, and direct and inverse problems. I hold a Doctor of Sciences in Mathematics from Ghent University (Belgium) and a Ph.D. in Physical and Mathematical Sciences from the V.I. Romanovskiy Institute of Mathematics, Uzbekistan Academy of Sciences.
+
+  Today I am bridging theoretical mathematics with scientific computing in Python and Physics-Informed Neural Networks (PINNs) to solve complex boundary value problems. I am the author of 8+ Scopus-indexed publications (h-index 4) and have extensive experience delivering English-medium courses in Calculus I–II, Differential Equations, Finite Mathematics, Business Mathematics and Applied Mathematics.
+
+research_statement: |
+  My work studies how solutions behave when a physical process "remembers" its past. Fractional-order derivatives — such as the Caputo, Riemann–Liouville, Hilfer and hyper-Bessel operators — describe anomalous diffusion, viscoelasticity and other memory effects. I study the existence and uniqueness of solutions for direct and inverse problems for such equations, including mixed-type and degenerate equations with singular coefficients, and I recover unknown sources from measured data.
+
+  More recently, I combine these analytical results with scientific computing in Python and Physics-Informed Neural Networks (PINNs, DeepXDE) to approximate solutions of boundary value problems numerically.
+
+interests:
+  - Fractional-order partial differential equations
+  - Degenerate and singular PDEs
+  - Direct and inverse problems
+  - Fractional integral-differential operators
+  - Boundary value problems
+  - Physics-Informed Neural Networks (PINNs) & DeepXDE
+
+experience:
+  - role: Assistant Professor of Mathematics
+    organization: Alasala Colleges
+    location: Dammam, Saudi Arabia
+    start: Oct 2023
+    end: Present
+    details:
+      - "Teach undergraduate courses: Calculus (Differential & Integral), Differential Equations, Mathematics for Management, Finite Mathematics, and Probability & Statistics."
+      - Develop syllabi, lecture materials and assessments aligned with departmental learning outcomes.
+      - Conduct original research in differential equations and publish in peer-reviewed journals.
+      - Provide individual mentoring and academic advising for undergraduate students.
+      - Contribute to college committees and academic administration.
+  - role: Adjunct Assistant Professor of Mathematics (Online)
+    organization: IT-Park University
+    location: Tashkent, Uzbekistan
+    start: Jan 2023
+    end: Feb 2026
+    details:
+      - Delivered English-medium mathematics courses for 320+ IT students in Discrete Mathematics, Algebra, Mathematical Logic, and Probability & Statistics.
+      - Used R for statistical problem solving and taught numerical data interpretation.
+      - Ran large-scale virtual lectures with MS Teams, Miro and Mentimeter.
+  - role: Assistant Professor of Mathematics
+    organization: Kokand University
+    location: Kokand, Uzbekistan
+    start: Jan 2023
+    end: Sep 2023
+    details:
+      - Taught Mathematics for Engineers I & II, Mathematics for Economists and Applied Mathematics to B.Sc. Computer Engineering students.
+  - role: Lecturer in Mathematics
+    organization: Tashkent Institute of Irrigation and Agricultural Mechanization Engineers
+    location: Tashkent, Uzbekistan
+    start: Sep 2020
+    end: Jan 2021
+    details:
+      - Taught Higher Mathematics to B.Sc. Electrical Engineering students.
+  - role: Lecturer in Mathematics
+    organization: Fergana State Technical University
+    location: Fergana, Uzbekistan
+    start: Sep 2017
+    end: Dec 2020
+    details:
+      - Taught Higher Mathematics to Electrical Engineering, Food Technology and Building Construction students.
+      - Led discussion sessions and developed course syllabi.
+
+education:
+  - degree: Doctor of Sciences (D.Sc.) in Mathematics
+    institution: Ghent University
+    location: Ghent, Belgium
+    dates: Jan 2020 – Nov 2022
+    thesis: Direct and inverse problems for singular partial differential equations with fractional order integral-differential operators
+    supervisors: Prof. Michael Ruzhansky and Prof. Erkinjon Karimov
+  - degree: Doctor of Philosophy (Ph.D.) in Physical and Mathematical Sciences
+    institution: V.I. Romanovskiy Institute of Mathematics, Uzbekistan Academy of Sciences
+    location: Tashkent, Uzbekistan
+    dates: Defended Dec 2022
+    thesis: ""
+    supervisors: Prof. Erkinjon Karimov
+  - degree: Master of Science in Mathematics (Differential Equations)
+    institution: Fergana State University
+    location: Fergana, Uzbekistan
+    dates: Sep 2015 – Jul 2017
+    thesis: The boundary value problems for the loaded hyperbolic type equations
+    supervisors: Prof. Akhmadjon Urinov
+  - degree: Bachelor of Science in Mathematics
+    institution: Fergana State University
+    location: Fergana, Uzbekistan
+    dates: Sep 2011 – Jul 2015
+    thesis: ""
+    supervisors: ""
+
+awards:
+  - title: Ghent University Doctoral Fellowship
+    organization: Ghent University, Belgium
+    year: "2021 – 2022"
+    description: Merit-based research scholarship (75% funding, including a €1,600 monthly stipend) supporting doctoral research on singular partial differential equations.
+  - title: El-Yurt Umidi Foundation International Scholarship
+    organization: Government of Uzbekistan
+    year: "2020"
+    description: Highly competitive national grant fully funding a 3-month international research stay at Ghent University.
+  - title: Full State Merit Scholarship for Master's Studies
+    organization: Government of Uzbekistan
+    year: "2015 – 2017"
+    description: Ranked 1st among all applicants for one of only 3 state-funded places nationwide.
+  - title: Full State Merit Scholarship for Bachelor's Studies
+    organization: Government of Uzbekistan
+    year: "2011 – 2015"
+    description: Ranked 4th out of 600+ applicants in the national university entrance examinations.
+
+# type: journal | chapter | in-press
+publications:
+  - authors: Toshtemirov B., Mamanazarov A.
+    title: Solvability of a mixed problem for a time-fractional PDE with time-space degenerating coefficients
+    venue: Computational Mathematics and Modeling
+    year: "2026"
+    details: In press
+    type: in-press
+    doi: ""
+  - authors: Toshtemirov B., Mamanazarov A.
+    title: Classical and weak solutions to the mixed problem for the time-fractional space degenerate partial differential equation
+    venue: "Modern Methods in Mathematical Physics and their Applications (MMMPhA 2025), Trends in Mathematics, vol. 16, Birkhäuser, Cham"
+    year: "2026"
+    details: "Eds. R. Ashurov, E. Karimov"
+    type: chapter
+    doi: 10.1007/978-3-032-13872-9_33
+  - authors: Toshtemirov B.
+    title: Inverse problem of determining a time-dependent source in a fractional Langevin-type partial differential equation
+    venue: "Trends in Mathematics, vol. 2, Birkhäuser, Cham"
+    year: "2024"
+    details: Peer-reviewed book chapter
+    type: chapter
+    doi: 10.1007/978-3-031-42539-4_26
+  - authors: Toshtemirov B.
+    title: Direct and inverse source problem for 2D Landau Hamiltonian operator
+    venue: Georgian Mathematical Journal
+    year: "2023"
+    details: ""
+    type: journal
+    doi: 10.1515/gmj-2023-2059
+  - authors: Karimov E., Ruzhansky M., Toshtemirov B.
+    title: Solvability of the boundary-value problem for a mixed equation involving hyper-Bessel fractional differential operator and bi-ordinal Hilfer fractional derivative
+    venue: Mathematical Methods in the Applied Sciences
+    year: "2023"
+    details: "46(1), 54–70"
+    type: journal
+    doi: 10.1002/mma.8491
+  - authors: Toshtemirov B.
+    title: On solvability of the non-local problem for the fractional mixed-type equation with Bessel operator
+    venue: Fractional Differential Calculus
+    year: "2022"
+    details: "12(1), 63–76"
+    type: journal
+    doi: 10.7153/fdc-2022-12-04
+  - authors: Karimov E., Toshtemirov B.
+    title: On a time-nonlocal boundary value problem for time-fractional partial differential equation
+    venue: International Journal of Applied Mathematics
+    year: "2022"
+    details: "35(3), 423–438"
+    type: journal
+    doi: 10.12732/ijam.v35i3.5
+  - authors: Toshtemirov B.
+    title: Frankl-type problem for a mixed type equation associated hyper-Bessel differential operator
+    venue: Montes Taurus Journal of Pure and Applied Mathematics
+    year: "2021"
+    details: "3(3), 327–333"
+    type: journal
+    doi: ""
+  - authors: Karimov E.T., Toshtemirov B.
+    title: Non-local boundary value problem for a mixed-type equation involving the bi-ordinal Hilfer fractional differential operators
+    venue: Uzbek Mathematical Journal
+    year: "2021"
+    details: "65(2), 61–77"
+    type: journal
+    doi: ""
+  - authors: Karimov E.T., Toshtemirov B.
+    title: Tricomi type problem with integral conjugation condition for a mixed type equation with the hyper-Bessel fractional differential operator
+    venue: Bulletin of the Institute of Mathematics
+    year: "2019"
+    details: "2(4), 9–15"
+    type: journal
+    doi: ""
+  - authors: Toshtemirov B.
+    title: Tricomi problem for the loaded parabolic-hyperbolic type equation in a characteristic triangle and rectangle
+    venue: Scientific Reports of Namangan State University
+    year: "2018"
+    details: "Issue 2, 78–83"
+    type: journal
+    doi: ""
+  - authors: Urinov A.K., Toshtemirov B.
+    title: Tricomi problems for the loaded parabolic-hyperbolic type equations II
+    venue: Scientific Reports of Fergana State University
+    year: "2016"
+    details: "Issue 4, 5–11"
+    type: journal
+    doi: ""
+  - authors: Urinov A.K., Toshtemirov B.
+    title: Tricomi problems for the loaded parabolic-hyperbolic type equations I
+    venue: Scientific Reports of Fergana State University
+    year: "2016"
+    details: "Issue 3, 5–10"
+    type: journal
+    doi: ""
+
+talks:
+  - title: Mixed problem for time-fractional equations with variable coefficients
+    authors: Toshtemirov B., Mamanazarov A.
+    event: "International Conference “Modern Methods of Mathematical Physics and Their Applications”, dedicated to the 80th anniversary of Prof. Sh. Alimov"
+    location: Tashkent, Uzbekistan
+    date: 22–24 Apr 2025
+  - title: Inverse-source problem for pseudo-parabolic type equation
+    authors: Toshtemirov B.
+    event: "International Conference “Current Issues in Mathematical Modeling and Information Technologies”"
+    location: Nukus, Karakalpakstan, Uzbekistan
+    date: 2–3 May 2023
+  - title: Existence and uniqueness of a time-dependent inverse source problem for sub-diffusion equation
+    authors: Karimov E., Toshtemirov B.
+    event: Annual International April Mathematical Conference
+    location: Almaty, Kazakhstan
+    date: 6–8 Apr 2022
+  - title: On solvability of the non-local problem for the fractional mixed-type equation with Bessel operator
+    authors: Toshtemirov B.
+    event: "International Scientific Conference “Modern Problems of Applied Mathematics and Information Technologies — al-Khwarizmi 2021”"
+    location: Fergana, Uzbekistan
+    date: 15–17 Nov 2021
+
+courses:
+  - Calculus I & II (Differential & Integral)
+  - Differential Equations
+  - Finite Mathematics
+  - Mathematics for Management / Business Mathematics
+  - Probability & Statistics
+  - Discrete Mathematics
+  - Algebra
+  - Mathematical Logic
+  - Mathematics for Engineers I & II
+  - Mathematics for Economists
+  - Applied Mathematics
+  - Higher Mathematics
+
+service:
+  - role: Technical Editor
+    organization: Bulletin of the Institute of Mathematics (Uzbekistan)
+    dates: 2020 – 2024
+
+skills:
+  - category: Programming
+    items: Python (NumPy, SymPy, PyTorch), DeepXDE (in progress), R
+  - category: Software
+    items: LaTeX, MS Teams, Google Classroom, Zoom, Mentimeter, Miro, Kahoot
+  - category: Teaching
+    items: Curriculum design, syllabus development, student mentoring, in-person and online instruction
+  - category: Research
+    items: Fractional calculus, PDE theory, inverse problems, academic writing, peer review
+
+languages:
+  - name: Uzbek
+    level: Native
+  - name: English
+    level: Fluent
+  - name: Russian
+    level: Basic
+
+references_note: References available on request.

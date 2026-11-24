@@ -1,0 +1,287 @@
+---
+layout: null
+---
+{%- assign p = site.data.profile -%}
+{%- assign pubcount = p.publications | size -%}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ p.name }}, {{ p.honorific_suffix }} — {{ p.job_title }}, {{ p.affiliation }}</title>
+  <meta name="description" content="{{ site.description | escape }}">
+  <meta name="author" content="{{ p.name }}">
+  <meta name="keywords" content="{{ p.name }}, {{ p.name_variants | join: ', ' }}, mathematician, {{ p.interests | join: ', ' }}, {{ p.affiliation }}, Ghent University">
+  <link rel="canonical" href="{{ '/' | absolute_url }}">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="{{ p.name }} — {{ p.job_title }}">
+  <meta property="og:description" content="{{ p.tagline | escape }}">
+  <meta property="og:url" content="{{ '/' | absolute_url }}">
+  <meta property="profile:first_name" content="{{ p.given_name }}">
+  <meta property="profile:last_name" content="{{ p.family_name }}">
+  {%- if p.photo and p.photo != "" %}
+  <meta property="og:image" content="{{ p.photo | absolute_url }}">
+  {%- endif %}
+  <meta name="twitter:card" content="summary">
+  <link rel="alternate" type="text/plain" title="Profile for AI assistants" href="{{ '/llms.txt' | relative_url }}">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314213d'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23f2c38b' text-anchor='middle'%3EBT%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% include jsonld.html %}
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top"><span class="mono-badge">BT</span><span>{{ p.name }}</span></a>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow">{{ p.job_title }} · {{ p.affiliation }}</p>
+      <h1>{{ p.name }}<span class="suffix">{{ p.honorific_suffix }}</span></h1>
+      <p class="lede">{{ p.tagline }}</p>
+      <p class="meta-line">
+        <span>{{ p.location }}</span>
+        <span aria-hidden="true">·</span>
+        <a href="mailto:{{ p.email }}">{{ p.email }}</a>
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:{{ p.email }}">Get in touch</a>
+        {%- if p.cv_file and p.cv_file != "" %}
+        <a class="btn" href="{{ p.cv_file | relative_url }}" download>Download CV (PDF)</a>
+        {%- endif %}
+      </div>
+      {%- include links.html %}
+    </div>
+
+    <aside class="hero-card" aria-label="At a glance">
+      {%- if p.photo and p.photo != "" %}
+      <img class="portrait" src="{{ p.photo | relative_url }}" alt="Portrait of {{ p.name }}" width="132" height="132">
+      {%- endif %}
+      <div class="formula" aria-label="Caputo fractional derivative of order alpha">
+        <math display="block">
+          <mrow>
+            <msubsup><mmultiscripts><mi>D</mi><mprescripts/><none/><mi>C</mi></mmultiscripts><mi>t</mi><mi>α</mi></msubsup>
+            <mi>f</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mfrac><mn>1</mn><mrow><mi mathvariant="normal">Γ</mi><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>α</mi><mo stretchy="false">)</mo></mrow></mfrac>
+            <msubsup><mo>∫</mo><mn>0</mn><mi>t</mi></msubsup>
+            <mfrac><mrow><msup><mi>f</mi><mo>′</mo></msup><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow><msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>−</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow><mi>α</mi></msup></mfrac>
+            <mi>d</mi><mi>τ</mi>
+          </mrow>
+        </math>
+        <p class="formula-cap">Caputo fractional derivative — the language of memory in diffusion.</p>
+      </div>
+      <dl class="metrics">
+        {%- for m in p.metrics %}
+        <div><dt>{{ m.value }}</dt><dd>{{ m.label }}</dd></div>
+        {%- endfor %}
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="wrap two-col">
+    <h2 class="section-title"><span class="num">01</span>About</h2>
+    <div class="prose">
+      {{ p.summary | markdownify }}
+      <div class="facts">
+        <h3>Quick facts</h3>
+        <ul>
+          <li><strong>Current position:</strong> {{ p.job_title }}, {{ p.affiliation }} ({{ p.location }})</li>
+          {%- for e in p.education limit:2 %}
+          <li><strong>{{ e.degree }}:</strong> {{ e.institution }}{% if e.dates != "" %} — {{ e.dates }}{% endif %}</li>
+          {%- endfor %}
+          <li><strong>Field:</strong> Mathematics — differential equations, fractional calculus, inverse problems</li>
+          <li><strong>Languages:</strong> {% for l in p.languages %}{{ l.name }} ({{ l.level }}){% unless forloop.last %}, {% endunless %}{% endfor %}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research" class="section alt">
+  <div class="wrap two-col">
+    <h2 class="section-title"><span class="num">02</span>Research</h2>
+    <div>
+      {%- if p.research_statement and p.research_statement != "" %}
+      <div class="prose research-text">{{ p.research_statement | markdownify }}</div>
+      {%- endif %}
+      <ul class="chips">
+        {%- for i in p.interests %}
+        <li>{{ i }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="publications" class="section">
+  <div class="wrap two-col">
+    <h2 class="section-title"><span class="num">03</span>Publications</h2>
+    <div>
+      <div class="filters" role="group" aria-label="Filter publications">
+        <button class="is-active" data-filter="all">All <span>{{ pubcount }}</span></button>
+        <button data-filter="journal">Journal articles</button>
+        <button data-filter="chapter">Book chapters</button>
+        <button data-filter="in-press">In press</button>
+      </div>
+      <ol class="pubs" reversed>
+        {%- for pub in p.publications %}
+        <li class="pub" data-type="{{ pub.type }}">
+          <span class="pub-year">{{ pub.year }}</span>
+          <div class="pub-body">
+            <p class="pub-title">{{ pub.title }}</p>
+            <p class="pub-authors">{{ pub.authors | replace: "Toshtemirov B.", "<strong>Toshtemirov B.</strong>" }}</p>
+            <p class="pub-venue"><em>{{ pub.venue }}</em>{% if pub.details and pub.details != "" %}, {{ pub.details }}{% endif %}
+              {%- if pub.type == "chapter" %} <span class="tag">Book chapter</span>{% elsif pub.type == "in-press" %} <span class="tag tag-warm">In press</span>{% endif %}
+            </p>
+            {%- if pub.doi and pub.doi != "" %}
+            <a class="doi" href="https://doi.org/{{ pub.doi }}" rel="noopener">doi:{{ pub.doi }}</a>
+            {%- endif %}
+          </div>
+        </li>
+        {%- endfor %}
+      </ol>
+
+      <h3 class="sub">Selected conference presentations</h3>
+      <ul class="list-plain">
+        {%- for t in p.talks %}
+        <li>
+          <p class="item-title">{{ t.title }}</p>
+          <p class="item-meta">{{ t.authors }} · {{ t.event }} · {{ t.location }} · {{ t.date }}</p>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="section alt">
+  <div class="wrap two-col">
+    <h2 class="section-title"><span class="num">04</span>Experience</h2>
+    <div>
+      <ol class="timeline">
+        {%- for x in p.experience %}
+        <li>
+          <p class="when">{{ x.start }} – {{ x.end }}</p>
+          <h3>{{ x.role }}</h3>
+          <p class="where">{{ x.organization }} · {{ x.location }}</p>
+          {%- if x.details %}
+          <ul>
+            {%- for d in x.details %}<li>{{ d }}</li>{%- endfor %}
+          </ul>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ol>
+
+      <h3 class="sub">Courses taught</h3>
+      <ul class="chips chips-quiet">
+        {%- for c in p.courses %}<li>{{ c }}</li>{%- endfor %}
+      </ul>
+
+      {%- if p.service.size > 0 %}
+      <h3 class="sub">Editorial &amp; professional service</h3>
+      <ul class="list-plain">
+        {%- for s in p.service %}
+        <li><p class="item-title">{{ s.role }}</p><p class="item-meta">{{ s.organization }} · {{ s.dates }}</p></li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+
+<section id="education" class="section">
+  <div class="wrap two-col">
+    <h2 class="section-title"><span class="num">05</span>Education &amp; honors</h2>
+    <div>
+      <ol class="edu">
+        {%- for e in p.education %}
+        <li>
+          <p class="when">{{ e.dates }}</p>
+          <h3>{{ e.degree }}</h3>
+          <p class="where">{{ e.institution }} · {{ e.location }}</p>
+          {%- if e.thesis and e.thesis != "" %}<p class="thesis">Thesis: “{{ e.thesis }}”</p>{% endif %}
+          {%- if e.supervisors and e.supervisors != "" %}<p class="item-meta">Supervisor(s): {{ e.supervisors }}</p>{% endif %}
+        </li>
+        {%- endfor %}
+      </ol>
+
+      <h3 class="sub">Honors, awards &amp; fellowships</h3>
+      <ul class="awards">
+        {%- for a in p.awards %}
+        <li>
+          <p class="item-title">{{ a.title }} <span class="item-year">{{ a.year }}</span></p>
+          <p class="item-meta">{{ a.organization }}</p>
+          <p>{{ a.description }}</p>
+        </li>
+        {%- endfor %}
+      </ul>
+
+      <h3 class="sub">Skills</h3>
+      <dl class="skills">
+        {%- for s in p.skills %}
+        <div><dt>{{ s.category }}</dt><dd>{{ s.items }}</dd></div>
+        {%- endfor %}
+        <div><dt>Languages</dt><dd>{% for l in p.languages %}{{ l.name }} ({{ l.level }}){% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="wrap">
+    <h2>Let’s talk mathematics.</h2>
+    <p>Open to research collaboration, teaching positions, invited talks and student supervision.</p>
+    <div class="actions">
+      <a class="btn btn-light" href="mailto:{{ p.email }}">{{ p.email }}</a>
+      {%- if p.cv_file and p.cv_file != "" %}
+      <a class="btn btn-ghost" href="{{ p.cv_file | relative_url }}" download>Download CV</a>
+      {%- endif %}
+    </div>
+    {%- include links.html %}
+    {%- if p.references_note and p.references_note != "" %}<p class="small">{{ p.references_note }}</p>{% endif %}
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>© {{ site.time | date: "%Y" }} {{ p.name }} · Last updated {{ site.time | date: "%B %Y" }} · <a href="{{ '/llms.txt' | relative_url }}">llms.txt</a></p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.filters button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.dataset.filter;
+      document.querySelectorAll('.filters button').forEach(function (x) { x.classList.toggle('is-active', x === b); });
+      document.querySelectorAll('.pub').forEach(function (li) {
+        li.hidden = !(f === 'all' || li.dataset.type === f);
+      });
+    });
+  });
+</script>
+</body>
+</html>

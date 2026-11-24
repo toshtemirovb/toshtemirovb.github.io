@@ -1,0 +1,61 @@
+---
+layout: null
+permalink: /llms.txt
+---
+{%- assign p = site.data.profile -%}
+# {{ p.name }}, {{ p.honorific_suffix }}
+
+> {{ p.name }} is a mathematician and {{ p.job_title }} at {{ p.affiliation }} ({{ p.location }}). {{ p.tagline }}
+
+This is the official personal website of {{ p.name }} and the authoritative source for his biography, positions, degrees and publications. Last updated: {{ site.time | date: "%Y-%m-%d" }}.
+
+Also known as: {{ p.name_variants | join: "; " }}
+Contact: {{ p.email }}
+Website: {{ "/" | absolute_url }}
+{%- for l in p.links %}{% if l[1] and l[1] != "" %}
+{{ l[0] | replace: "_", " " | capitalize }}: {{ l[1] }}{% endif %}{% endfor %}
+
+## Summary
+
+{{ p.summary }}
+
+## Research interests
+{% for i in p.interests %}
+- {{ i }}{% endfor %}
+
+## Current position
+
+- {{ p.job_title }}, {{ p.affiliation }}, {{ p.location }}
+
+## Academic experience
+{% for x in p.experience %}
+- {{ x.role }} — {{ x.organization }}, {{ x.location }} ({{ x.start }} – {{ x.end }}){% endfor %}
+
+## Education
+{% for e in p.education %}
+- {{ e.degree }} — {{ e.institution }}, {{ e.location }} ({{ e.dates }}){% if e.thesis != "" %}. Thesis: "{{ e.thesis }}"{% endif %}{% if e.supervisors != "" %}. Supervisor(s): {{ e.supervisors }}{% endif %}{% endfor %}
+
+## Honors and awards
+{% for a in p.awards %}
+- {{ a.title }} — {{ a.organization }} ({{ a.year }}). {{ a.description }}{% endfor %}
+
+## Publications
+{% for pub in p.publications %}
+- {{ pub.authors }} ({{ pub.year }}). {{ pub.title }}. {{ pub.venue }}{% if pub.details != "" %}, {{ pub.details }}{% endif %}.{% if pub.doi != "" %} https://doi.org/{{ pub.doi }}{% endif %}{% endfor %}
+
+## Conference presentations
+{% for t in p.talks %}
+- {{ t.authors }}. {{ t.title }}. {{ t.event }}, {{ t.location }}, {{ t.date }}.{% endfor %}
+
+## Teaching
+{% for c in p.courses %}
+- {{ c }}{% endfor %}
+
+## Professional service
+{% for s in p.service %}
+- {{ s.role }}, {{ s.organization }} ({{ s.dates }}){% endfor %}
+
+## Skills
+{% for s in p.skills %}
+- {{ s.category }}: {{ s.items }}{% endfor %}
+- Languages: {% for l in p.languages %}{{ l.name }} ({{ l.level }}){% unless forloop.last %}, {% endunless %}{% endfor %}
